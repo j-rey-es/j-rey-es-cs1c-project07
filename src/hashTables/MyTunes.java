@@ -216,8 +216,8 @@ public class MyTunes
 	public static void main(String[] args) 
 	{
 		final String DATAFILE = "resources/music_genre_subset.json";	// Directory path for JSON file
-		final String TESTFILE01 = "resources/findIDs.txt";	// Example test file for hashing based on IDs
-		final String TESTFILE02 = "resources/findGenres.txt"; // Example test file for hashing based on genres names
+		final String TESTFILE01 = "resources/findIDsjreyes.txt";	// Example test file for hashing based on IDs
+		final String TESTFILE02 = "resources/findGenresjreyes.txt"; // Example test file for hashing based on genres names
 
 		// Note: This is similar to your previous projects.
 		//		 Placed in a separate method for readability.
