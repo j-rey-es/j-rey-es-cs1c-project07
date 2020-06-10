@@ -21,13 +21,10 @@ public class MyTunes
 
 	// Two hash tables of type FHhashQPwFind which extends parent class FHhashQP --------
 
-	// TODO: Define the wrapper class SongCompInt for SongEntry objects,
-	//       which would compare SongEntry objects based on the song's int id field.
+
 	private FHhashQPwFind<Integer, SongCompInt>  tableOfSongIDs;
 
-	// TODO: Define the wrapper class SongCompGenre for SongEntry objects,
-	//       which would compare SongEntry objects based on the String genre field and
-	//       determines the number of songs in each genre.
+
 	private FHhashQPwFind<String, SongsCompGenre> tableOfGenres; 
 
 	// List of genres found while populating tableOfGenres field
@@ -42,18 +39,13 @@ public class MyTunes
 	 */
 	public MyTunes(SongEntry[] allSongs)
 	{		
-		// TODO: Define the TableGenerator class to have two class fields of type
-		//       FHhashQPwFind which extend the parent class FHhashQP.
+
 		TableGenerator g = new TableGenerator();
 
-		// TODO: Populates a hash table for comparing songs based on their int field ID.
 		tableOfSongIDs = g.populateIDtable(allSongs);
 
-		// TODO: Populates a hash table for comparing songs based on their String field genre.
-		//       Uses this table to also populates list of genre names with unique keys.
 		tableOfGenres = g.populateGenreTable(allSongs);
 
-		// TODO: Return the unique genre names found when populating genre table
 		genreNames = g.getGenreNames();
 	}
 
@@ -143,8 +135,7 @@ public class MyTunes
 
 			try
 			{
-				// TODO: Define the wrapper class for a SongEntry object such that 
-				//       it compares objects based on a song's integer id field.
+
 				SongCompInt compResult  = tableOfSongIDs.find(id);
 				if (compResult != null)
 				{
@@ -173,8 +164,7 @@ public class MyTunes
 
 		for (String genreName : genreKeys)
 		{
-			// TODO: Define the wrapper class for a SongEntry object such that 
-			//       it compares objects based on the songs String genre field.
+
 			SongsCompGenre genre = tableOfGenres.find(genreName);
 
 			// NOTE: A genre has an ArrayList of SongEntry objects.
