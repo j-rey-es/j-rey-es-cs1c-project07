@@ -5,14 +5,20 @@ public class FHhashQPwFind<KeyType, E extends Comparable<KeyType> >
 {
     public E find(KeyType key)
     {
-        return E;
+        return mArray[findPosKey(key)].data;
+
     }
 
     public int myHashKey(KeyType key)
     {
-        return int;
+        int hashKey;
+        hashKey = key.hashCode() % mTableSize;
+        if(hashKey < 0)
+            hashKey +=mTableSize;
+        return hashKey;
     }
     public int findPosKey(KeyType key){
+
         return int;
     }
 }
