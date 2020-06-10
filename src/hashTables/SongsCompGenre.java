@@ -6,8 +6,9 @@ import java.util.ArrayList;
 
 public class SongsCompGenre implements Comparable <String>
 {
-    private SongEntry data;
+    private String genre;
     private ArrayList<SongEntry> songs;
+    private SongEntry data;
 
     public SongsCompGenre(SongEntry song)
     {
@@ -40,6 +41,10 @@ public class SongsCompGenre implements Comparable <String>
     public int hashCode()
     {
         return data.getGenre().hashCode();
+    }
+    public String getGenre()
+    {
+        return genre;
     }
 
     public String toString()
