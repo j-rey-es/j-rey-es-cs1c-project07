@@ -7,10 +7,14 @@ import java.util.NoSuchElementException;
 
 public class TableGenerator {
 
-    private ArrayList<String> genreNames;
+    private ArrayList<String> genreNames = new ArrayList<String>();
+    private FHhashQPwFind<Integer,SongCompInt> hashSongID =  new FHhashQPwFind<Integer,SongCompInt>();
+    private FHhashQPwFind<String,SongsCompGenre> hashSongGenre =  new FHhashQPwFind<String,SongsCompGenre>();
+
+
     public FHhashQPwFind<Integer,SongCompInt> populateIDtable(SongEntry[] songEntries)
     {
-        FHhashQPwFind<Integer,SongCompInt> hashSongID =  new FHhashQPwFind<Integer,SongCompInt>();
+
 
         for (int i = 0; i < songEntries.length; i++)
         {
@@ -22,14 +26,14 @@ public class TableGenerator {
 
     public FHhashQPwFind<String,SongsCompGenre> populateGenreTable(SongEntry[] songEntries)
     {
-        FHhashQPwFind<String,SongsCompGenre> hashSongGenre =  new FHhashQPwFind<String,SongsCompGenre>();
+
 
         for (int i = 0; i < songEntries.length; i++)
         {
             try
             {
                 SongsCompGenre songGenre = hashSongGenre.find(songEntries[i].getGenre());
-                songGenre.addSong(songEntries[i]);
+                songGenre.getData().add(songEntries[i]);
             }
             catch (NoSuchElementException e)
             {
