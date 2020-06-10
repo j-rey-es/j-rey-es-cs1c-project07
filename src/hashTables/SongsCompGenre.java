@@ -13,6 +13,8 @@ public class SongsCompGenre implements Comparable <String>
     public SongsCompGenre(SongEntry song)
     {
         data = song;
+        name = song.getGenre();
+        songs = new ArrayList<SongEntry>();
     }
     public void addSong(SongEntry e)
     {
