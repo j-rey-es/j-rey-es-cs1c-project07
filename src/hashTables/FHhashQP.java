@@ -20,6 +20,7 @@ public class FHhashQP<E>
    // public methods ---------------------------------
    public FHhashQP(int tableSize)
    {
+
       mLoadSize = mSize = 0;
       if (tableSize < INIT_TABLE_SIZE)
          mTableSize = INIT_TABLE_SIZE;

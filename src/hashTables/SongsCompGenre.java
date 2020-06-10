@@ -32,9 +32,9 @@ public class SongsCompGenre implements Comparable <String>
         return data.getGenre().compareTo(key);
     }
 
-    public boolean equals(String key)
+    public boolean equals(SongsCompGenre key)
     {
-        return data.getGenre().equals(key);
+        return data.equals(key.data);
     }
 
     public int hashCode()
