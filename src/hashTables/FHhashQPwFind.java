@@ -2,9 +2,21 @@ package hashTables;
 
 import java.util.NoSuchElementException;
 
+/**
+ * Hash table with quadratic probing based off FHhashQP
+ * Adds additional find based off key
+ * @author Joel R
+ * @param <KeyType>, generic parameter to find based off
+ * @param <E>, generic item that is returned from hash table
+ */
 public class FHhashQPwFind<KeyType, E extends Comparable<KeyType> >
         extends FHhashQP<E>
 {
+    /**
+     * Finds object in hash table based on key
+     * @param key KeyType that implements Comparable
+     * @return Object within hash table
+     */
     public E find(KeyType key)
     {
         if(mArray[findPosKey(key)].state == ACTIVE)
@@ -13,6 +25,11 @@ public class FHhashQPwFind<KeyType, E extends Comparable<KeyType> >
 
     }
 
+    /**
+     * Creates hash key of based on key rather than object
+     * @param key KeyType that implements Comparable
+     * @return
+     */
     public int myHashKey(KeyType key)
     {
         int hashKey;
@@ -21,6 +38,12 @@ public class FHhashQPwFind<KeyType, E extends Comparable<KeyType> >
             hashKey +=mTableSize;
         return hashKey;
     }
+
+    /**
+     * Finds position of key in hash table based on key rather than object
+     * @param key KeyType that implements Comparable
+     * @return
+     */
 
     public int findPosKey(KeyType key){
         int kthOddNum = 1;

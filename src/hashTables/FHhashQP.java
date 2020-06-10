@@ -1,6 +1,10 @@
 package hashTables;
 
-
+/**
+ * Hash table that uses quadratic probing for collision resolution
+ * Taken from lecture
+ * @param <E> generic object to be stored in hash table
+ */
 // FHhashQP class --------------------------------------------
 public class FHhashQP<E>
 {

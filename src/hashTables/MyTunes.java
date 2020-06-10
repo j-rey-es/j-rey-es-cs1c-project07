@@ -51,7 +51,7 @@ public class MyTunes
 
 		// TODO: Populates a hash table for comparing songs based on their String field genre.
 		//       Uses this table to also populates list of genre names with unique keys.
-		tableOfGenres = g.populateGenreTable(allSongs);		
+		tableOfGenres = g.populateGenreTable(allSongs);
 
 		// TODO: Return the unique genre names found when populating genre table
 		genreNames = g.getGenreNames();

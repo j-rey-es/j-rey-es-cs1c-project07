@@ -1,5 +1,9 @@
 package hashTables;
 
+/**
+ * HashEnty taken from lecture, contains state flags
+ * @param <E> generic data object to be stored in hash table
+ */
 
 // HashEntry class for use by FHhashQP -----------------------
 public class HashEntry<E>
