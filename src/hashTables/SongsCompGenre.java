@@ -1,68 +1,49 @@
 package hashTables;
-import java.lang.Comparable;
+import cs1c.SongEntry;
 
-public class SongsCompGenre implements Comparable <SongsCompGenre>
+import java.util.ArrayList;
+
+
+public class SongsCompGenre implements Comparable <String>
 {
-    public static final int MAX_LEN = 50;
+    private SongEntry data;
+    private ArrayList<SongEntry> songs;
 
-    private String name;
-    private double salary;
-    private int id;
-
-    public SongsCompGenre(String name , int id)
+    public SongsCompGenre(SongEntry song)
     {
-        this();
-        setName(name);
-        setID(id);
-        salary = 1500.00;
+        data = song;
+    }
+    public void addSong(SongEntry e)
+    {
+        songs.add(e);
+    }
+    public SongEntry getSongEntry()
+    {
+        return data;
+
+    }
+    public ArrayList<SongEntry> getSongs()
+    {
+        return songs;
     }
 
-    public SongsCompGenre()
+    public int compareTo(String key)
     {
-        name = "undefined";
-        id = 0;
+        return data.getGenre().compareTo(key);
     }
 
-    String getName()
-    { return name; }
-
-    int getID() { return id; }
-
-    boolean setName( String name )
+    public boolean equals(String key)
     {
-        if (name == null)
-            return false;
-        if (name.length() > MAX_LEN)
-            return false;
-        this.name = name;
-        return true;
-    }
-
-    boolean setID( int updatedID )
-    {
-        if (updatedID < 0 || updatedID > 999999999 )
-            return false;
-        this.id = updatedID;
-        return true;
-    }
-
-    public String toString()
-    {
-        return name + " (" + id + ")";
-    }
-
-    public boolean equals( SongsCompGenre rhs )
-    {
-        return id == rhs.id;
+        return data.getGenre().equals(key);
     }
 
     public int hashCode()
     {
-        return id;
+        return data.getGenre().hashCode();
     }
 
-    @Override
-    public int compareTo(SongsCompGenre o) {
-        return 0;
+    public String toString()
+    {
+        return data.toString();
     }
 }
